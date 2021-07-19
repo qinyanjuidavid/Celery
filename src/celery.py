@@ -14,9 +14,11 @@ app = Celery('src')
 # - namespace='CELERY' means all celery-related configuration keys
 #   should have a `CELERY_` prefix.
 app.config_from_object('django.conf:settings', namespace='CELERY')
-app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
-# Load task modules from all registered Django apps.
-app.autodiscover_tasks()
+try:
+    app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
+    # Load task modules from all registered Django apps.
+except:
+    app.autodiscover_tasks()
 
 
 @app.task(bind=True)

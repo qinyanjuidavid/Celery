@@ -12,6 +12,11 @@ def add(x, y):
 
 @shared_task
 def mul(x, y):
-    time.sleept(5)
+    time.sleep(5)
     return x * y
+
+@shared_task
+def Sleepy(duration):
+    time.sleep(duration)
+    return None
 #From notifications.tasks import add

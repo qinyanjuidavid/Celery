@@ -43,7 +43,7 @@ MIDDLEWARE = [
 ]
 
 # BROKER_URL = 'redis://localhost:6379'
-BROKER_URL = 'django://'
+CELERY_BROKER_URL = 'redis://:p1f67918a32095bcd6180817f785e953062fa0fd43725ed3cdc73800c92f09ae7@ec2-34-204-112-169.compute-1.amazonaws.com:22270'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
