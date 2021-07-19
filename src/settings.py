@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'celery',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -41,7 +42,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-BROKER_URL = 'redis://localhost:6379'
+# BROKER_URL = 'redis://localhost:6379'
+BROKER_URL = 'django://'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
